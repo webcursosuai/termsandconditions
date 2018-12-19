@@ -61,6 +61,7 @@ class block_termsandconditions extends block_base {
         if($view || is_siteadmin()){
             if($termsandconditions = $DB->get_record('block_termsandconditions',array("userid"=>$USER->id,"courseid"=>$COURSE->id)) || is_siteadmin()){
                 $content = $OUTPUT->pix_icon("i/completion-auto-pass", "")."politicas de privacidad";
+                echo $this->page->context;
             }else{
                 $content = $OUTPUT->pix_icon("i/completion-auto-fail", "")."politicas de privacidad";
                 $url = $CFG->wwwroot."/blocks/termsandconditions/ajax.php?courseid=$COURSE->id";
@@ -144,11 +145,5 @@ class block_termsandconditions extends block_base {
         $attributes = parent::html_attributes(); // Get default values
         $attributes['class'] .= ' block_'. $this->name(); // Append our class to class attribute
         return $attributes;
-    }
-    public function applicable_formats() {
-        return array(
-            'course-view' => true,
-            'mod' => true,
-        );
     }
 }
