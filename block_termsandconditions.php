@@ -50,7 +50,8 @@ class block_termsandconditions extends block_base {
         if($this->page->context->contextlevel == CONTEXT_COURSE){
             $configroles = explode(',',get_config('termsandconditions', 'Allow_HTML'));
             $view=false;
-            if ($roles = get_user_roles($this->page->context, $USER->id)) {
+            $context = get_context_instance($this->page->context,$COURSE->id);
+            if ($roles = get_user_roles($context, $USER->id)) {
                 foreach ($roles as $role) {
                     if(in_array($role->roleid,$configroles)){
                         $view = true;
@@ -119,13 +120,8 @@ class block_termsandconditions extends block_base {
         return $this->content;
     }
     //function called inmidiatly after init() used for loads that need to be fast
-    public function specialization() {
-       /* $this->title .= "<script>
-                             $( document ).ready(function() {
-                                $('#page').html('');
-                            });
-                            </script>";*/
-    }
+    //public function specialization() {
+    //}
     //test
     function _self_test() {
         return true;
@@ -133,14 +129,6 @@ class block_termsandconditions extends block_base {
     //tells moodle that the block has global settings
     function has_config() {
         return true;
-    }
-    //alters the order in which the data is delivered to the save method on instance config.
-    public function instance_config_save($data,$nolongerused =false) {
-        if(get_config('termsandconditions', 'Allow_HTML') == '1') {
-            $data->text = strip_tags($data->text);
-        }
-        // And now forward to the default implementation defined in the parent class
-        return parent::instance_config_save($data,$nolongerused);
     }
     //allows to add clases and atributes to the blocks html
     public function html_attributes() {
