@@ -50,8 +50,7 @@ class block_termsandconditions extends block_base {
         if($this->page->context->contextlevel == CONTEXT_COURSE){
             $configroles = explode(',',get_config('termsandconditions', 'Allow_HTML'));
             $view=false;
-            $context = context_course::instance($this->page->course->id);
-            if ($roles = get_user_roles($context, $USER->id)) {
+            if ($roles = get_user_roles($this->page->context, $USER->id)) {
                 foreach ($roles as $role) {
                     if(in_array($role->roleid,$configroles)){
                         $view = true;
