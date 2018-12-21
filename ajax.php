@@ -22,15 +22,16 @@
 define('AJAX_SCRIPT', true);
 require_once (dirname(dirname(dirname(__FILE__)))."/config.php");
 global $DB, $USER;
+
+require_login();
+if (isguestuser()){
+    die();
+}
+
 $courseid = required_param("courseid", PARAM_INT);
 // Verify course
 if(! $course = $DB->get_record("course", array("id" => $courseid))){
 	echo "course dont exist";
-	die();
-}
-$context = context_course::instance($course->id);
-if(! has_capability("moodle/course:sectionvisibility", $context)){
-	echo "ACCESS DENIED";
 	die();
 }
 if(!$check = $DB->get_record('block_termsandconditions',array('courseid'=>$course->id,'userid'=>$USER->id))){

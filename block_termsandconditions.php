@@ -47,7 +47,6 @@ class block_termsandconditions extends block_base {
         if ($this->content !== null) {
             return $this->content;
         }
-        $content = '';
         if($this->page->context->contextlevel == CONTEXT_COURSE){
             $configroles = explode(',',get_config('termsandconditions', 'Allow_HTML'));
             $view=false;
@@ -108,7 +107,11 @@ class block_termsandconditions extends block_base {
                                 });
                                 </script>";
                 }
+            }else{
+                $content = '';
             }
+        }else {
+            $content = '';
         }
         $this->content = new stdClass;
         $this->content->text   = $content;
