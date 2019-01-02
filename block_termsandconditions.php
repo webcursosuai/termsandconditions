@@ -26,7 +26,7 @@
 class block_termsandconditions extends block_base {
     //initialize the block
     public function init() {
-        $this->title = get_string('simplehtml', 'block_termsandconditions');
+        $this->title = get_string('title', 'block_termsandconditions');
     }
     
     function instance_allow_multiple() {
