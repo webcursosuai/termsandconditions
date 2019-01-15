@@ -1,5 +1,7 @@
 <?php
 $string['pluginname'] = 'Terms and conditions block';
 $string['title'] = 'Terms and conditions';
-$string['simplehtml:addinstance'] = 'Add a new simple HTML block';
-$string['simplehtml:myaddinstance'] = 'Add a new simple HTML block to the My Moodle page';
+$string['headerconfig'] = 'Settings';
+$string['descconfig'] = 'Settings description';
+$string['labelallowrol'] = 'affected Roles';
+$string['descallowrol'] = 'affected roles by the block';
