@@ -53,6 +53,7 @@ class block_termsandconditions extends block_base {
             $view=false;
             if ($roles = get_user_roles($this->page->context, $USER->id)) {
                 print_r($roles);
+                print_r($DB->get_fieldset_select('role', 'shortname',true));
                 foreach ($roles as $role) {
                     if(in_array($role->roleid,$configroles)){
                         $view = true;
