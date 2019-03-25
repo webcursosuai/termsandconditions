@@ -55,7 +55,7 @@ class block_termsandconditions extends block_base {
                 print_r($roles);
                 print_r($DB->get_fieldset_select('role', 'shortname',true));
                 foreach ($roles as $role) {
-                    if(in_array($role->roleid,$configroles)){
+                    if(in_array($role->roleid-1,$configroles)){
                         $view = true;
                         break;
                     }
