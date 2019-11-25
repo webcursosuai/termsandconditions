@@ -9,5 +9,5 @@ $settings->add(new admin_setting_configmultiselect(
             get_string('labelallowrol', 'block_termsandconditions'),
             get_string('descallowrol', 'block_termsandconditions'),
             array(0,1,4,6),
-            $DB->get_fieldset_sql('SELECT shortname FROM {role} ORDER BY id')
+            $DB->get_fieldset_sql('SELECT id, shortname FROM {role} ORDER BY id')
         ));
