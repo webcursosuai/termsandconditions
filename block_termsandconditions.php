@@ -86,7 +86,7 @@ class block_termsandconditions extends block_base {
                                         "text += ".'"'."<h5> <b><input type='checkbox' name='checkacept' id='checkacept' > Acepto los terminos anteriormente expuestos <b></h5>".'";'.
                                         "text += ".'"'."<input type='submit' name='submitbutton' value ='Acepto' id='submitbutton'>".'";'."
                                         $('.page').html(text);
-    	                                $('.page').css('padding','10 10 10 10');
+    	                                $('.page').attr('style','padding: 10 10 10 10');
                                         $('#nav-drawer').html('<div></div>');
         	                       $('#submitbutton').click(function() {
                                         if($('#checkacept').prop('checked')){
