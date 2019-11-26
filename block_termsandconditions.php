@@ -88,7 +88,10 @@ class block_termsandconditions extends block_base {
                                         $('.page').html(text);
     	                                $('.page').attr('style','padding-left: 20px');
     	                                $('.page').attr('style','padding-right: 20px');
+    	                                $('.page').attr('style','margin-left: 0px');
     	                                $('.site-menubar').hide();
+    	                                $('#toggleMenubar').hide();
+    	                                
                                         $('#nav-drawer').html('<div></div>');
         	                       $('#submitbutton').click(function() {
                                         if($('#checkacept').prop('checked')){
