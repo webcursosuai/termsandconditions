@@ -66,7 +66,7 @@ class block_termsandconditions extends block_base {
                     $url = $CFG->wwwroot."/blocks/termsandconditions/ajax.php?courseid=$COURSE->id";
                     $content .= "<script>
                                  $( document ).ready(function() {
-                                    var text = '<h1> TERMINOS Y CONDICIONES </h1>';
+                                    var text = '<h1> TÉRMINOS Y CONDICIONES </h1>';
     	                                text += ".'"'."<p align = 'justify'> Los presentes términos y condiciones, regulan el acceso y uso de los usuarios a la plataforma Webcursos de la Universidad Adolfo Ibáñez <a href='http://webcursos.uai.cl'>https://webcursos.uai.cl</a>.<br> Los Usuarios deberán de leer y aceptar estas condiciones para usar todos los servicios e informaciones que se facilitan desde la plataforma. El mero acceso y/o utilización de Webcursos, de todos o parte de sus contenidos y/o servicios significa la plena aceptación de las presentes condiciones generales de uso. Para efectos de los presentes términos y condiciones se entenderá por:</p>".'";'.
     	                                "text += ".'"'."<ol type = 'a'>".'";'.
         	                            "text += ".'"'."<li align = 'justify'> Material de Libre Acceso: Son todas aquellas obras que no requieren de alguna suscripción o pago, dentro de estas podemos encontrar artículos de investigación científica de revistas especializadas u otras obras que no requieren de un permiso del autor o de la editorial para su reproducción.</li>".'";'.
@@ -83,10 +83,11 @@ class block_termsandconditions extends block_base {
                                     	"text += ".'"'."<li align = 'justify'> Es responsabilidad de cada Usuario conocer la normativa vigente en Chile sobre Propiedad Intelectual, la cual está regulada en la Ley 17.336.</li>".'";'.
                                     	"text += ".'"'."<li align = 'justify'> Los Usuarios deben tener presente que los documentos, obras o materiales disponibles libremente en internet no suponen que éstos sean de dominio público o que no se esté infringiendo derechos de propiedad intelectual.</li>".'";'.
                                         "text += ".'"'."</ol>".'";'.
-                                        "text += ".'"'."<h5> <b><input type='checkbox' name='checkacept' id='checkacept' > Acepto los terminos anteriormente expuestos <b></h5>".'";'.
+                                        "text += ".'"'."<h5> <b><input type='checkbox' name='checkacept' id='checkacept' > Acepto los términos anteriormente expuestos <b></h5>".'";'.
                                         "text += ".'"'."<input type='submit' name='submitbutton' value ='Acepto' id='submitbutton'>".'";'."
                                         $('.page').html(text);
     	                                $('.page').attr('style','padding-left: 20px; padding-right: 20px; margin-left: 0px;');
+    	                                $('.site-footer').attr('style','margin-left: 0px; margin-right: 0px;');
     	                                $('.site-menubar').hide();
     	                                $('#toggleMenubar').hide();
     	                                
@@ -105,7 +106,7 @@ class block_termsandconditions extends block_base {
                                                 },
                                             });
                                         }else{
-                                            alert('Debe aceptar los terminos y condiciones para poder utilizar el curso.');
+                                            alert('Debe aceptar los términos y condiciones para poder utilizar el curso.');
                                         }
                                     });       
                                 });
