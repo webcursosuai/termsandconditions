@@ -84,31 +84,33 @@ class block_termsandconditions extends block_base {
                                     	"text += ".'"'."<li align = 'justify'> Los Usuarios deben tener presente que los documentos, obras o materiales disponibles libremente en internet no suponen que éstos sean de dominio público o que no se esté infringiendo derechos de propiedad intelectual.</li>".'";'.
                                         "text += ".'"'."</ol>".'";'.
                                         "text += ".'"'."<h5> <b><input type='checkbox' name='checkacept' id='checkacept' > Acepto los términos anteriormente expuestos <b></h5>".'";'.
-                                        "text += ".'"'."<input type='submit' name='submitbutton' value ='Acepto' id='submitbutton'>".'";'."
+                                        "text += ".'"'."<input type='submit' name='submitbutton' value ='Acepto' id='submitbutton' class='btn btn-primary'>".'";'."
                                         $('.page').html(text);
     	                                $('.page').attr('style','padding-left: 20px; padding-right: 20px; margin-left: 0px;');
     	                                $('.site-footer').attr('style','margin-left: 0px; margin-right: 0px;');
     	                                $('.site-menubar').hide();
     	                                $('#toggleMenubar').hide();
+    	                                $('#page-course-view-topics').attr('style','background: #f1f4f5');
+                                        $('#submitbutton').attr('style','margin-bottom: 5px;');
     	                                
                                         $('#nav-drawer').html('<div></div>');
-        	                       $('#submitbutton').click(function() {
-                                        if($('#checkacept').prop('checked')){
-                                            $.ajax({
-                                            	url: '".$url."',
-                                                type: 'json',
-                                            	data:{},
-                                            	success: function(result){
-                                                	window.location.reload();
-                                                },
-                                                error: function(exception) {
-                                                    window.location.reload();
-                                                },
-                                            });
-                                        }else{
-                                            alert('Debe aceptar los términos y condiciones para poder utilizar el curso.');
-                                        }
-                                    });       
+        	                            $('#submitbutton').click(function() {
+                                            if($('#checkacept').prop('checked')){
+                                                $.ajax({
+                                                    url: '".$url."',
+                                                    type: 'json',
+                                                    data:{},
+                                                    success: function(result){
+                                                        window.location.reload();
+                                                    },
+                                                    error: function(exception) {
+                                                        window.location.reload();
+                                                    },
+                                                });
+                                            }else{
+                                                alert('Debe aceptar los términos y condiciones para poder utilizar el curso.');
+                                            }
+                                        });       
                                 });
                                 </script>";
                 }
