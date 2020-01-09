@@ -52,7 +52,7 @@ class block_termsandconditions extends block_base {
             $view=false;
             if ($roles = get_user_roles($this->page->context, $USER->id)) {
                 foreach ($roles as $role) {
-                    if(in_array($role->roleid-1,$configroles)){
+                    if(in_array($role->roleid,$configroles)){
                         $view = true;
                         break;
                     }
