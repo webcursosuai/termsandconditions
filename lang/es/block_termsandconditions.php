@@ -1,6 +1,6 @@
 <?php
-$string['pluginname'] = 'Terminos y condiciones';
-$string['title'] = 'Terminos y condiciones';
+$string['pluginname'] = 'Términos y condiciones';
+$string['title'] = 'Términos y condiciones';
 $string['headerconfig'] = 'Configuración';
 $string['descconfig'] = 'Configuración';
 $string['labelallowrol'] = 'Roles afectados';
