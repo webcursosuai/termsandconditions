@@ -60,9 +60,9 @@ class block_termsandconditions extends block_base {
             }
             if($view || is_siteadmin()){
                 if($termsandconditions = $DB->get_record('block_termsandconditions',array("userid"=>$USER->id,"courseid"=>$COURSE->id)) || is_siteadmin()){
-                    $content = $OUTPUT->pix_icon("i/completion-auto-pass", "")."politicas de privacidad";
+                    $content = $OUTPUT->pix_icon("i/completion-auto-pass", "")."políticas de privacidad";
                 }else{
-                    $content = $OUTPUT->pix_icon("i/completion-auto-fail", "")."politicas de privacidad";
+                    $content = $OUTPUT->pix_icon("i/completion-auto-fail", "")."políticas de privacidad";
                     $url = $CFG->wwwroot."/blocks/termsandconditions/ajax.php?courseid=$COURSE->id";
                     $content .= "<script>
                                  $( document ).ready(function() {
@@ -87,7 +87,7 @@ class block_termsandconditions extends block_base {
                                         "text += ".'"'."<input type='submit' name='submitbutton' value ='Acepto' id='submitbutton' class='btn btn-primary'>".'";'."
                                         $('.page').html(text);
     	                                $('.page').attr('style','padding-left: 20px; padding-right: 20px; margin-left: 0px; margin-top: -22px;');
-    	                                $('.site-footer').attr('style','margin-left: 0px; margin-right: 0px;');
+    	                                $('.site-footer').attr('style','margin-left: 0px; margin-right: 0px!important;');
     	                                $('.site-menubar').hide();
     	                                $('#toggleMenubar').hide();
     	                                $('#page-course-view-topics').attr('style','background: #f1f4f5');
